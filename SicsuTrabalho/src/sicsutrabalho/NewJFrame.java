@@ -45,6 +45,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jMenu1.setText("Mesa");
 
         jMenuItem3.setText("Criar");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         jMenuItem4.setText("Recuperar");
@@ -55,9 +60,19 @@ public class NewJFrame extends javax.swing.JFrame {
         jMenu2.setText("Cadeira");
 
         jMenuItem5.setText("Criar");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem5);
 
         jMenuItem6.setText("Recuperar");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem6);
 
         jMenuBar1.add(jMenu2);
@@ -94,6 +109,40 @@ public class NewJFrame extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        CriarCadeira criarCadeira = new CriarCadeira();
+        criarCadeira.show();        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        CriarCadeira criarCadeira = new CriarCadeira();
+        criarCadeira.show();
+        
+        Cadeira cadeira = new Cadeira();
+        cadeira = cadeira.desserializar();
+        
+        criarCadeira.getCor().setText(cadeira.getCor());
+        criarCadeira.getModelo().setText(cadeira.getModelo());
+        criarCadeira.getRevestimento().setText(cadeira.getTipoRevestimento());
+        criarCadeira.getMaterial().setText(cadeira.getTipoMaterial());
+        criarCadeira.getPes().setText(Integer.toString(cadeira.getNumeroPes()));
+        criarCadeira.getPreco().setText(Double.toString(cadeira.getPreco()));
+        
+        if(cadeira.isAmortecedor()) {
+            criarCadeira.getAmortecedorSim().setSelected(true);
+            criarCadeira.getAmortecedorNao().setSelected(false);
+        } else {
+            criarCadeira.getAmortecedorSim().setSelected(false);
+            criarCadeira.getAmortecedorNao().setSelected(true);
+        }
+        
+            
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -122,8 +171,11 @@ public class NewJFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new NewJFrame().setVisible(true);
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                 new NewJFrame().setVisible(true);
+            }
         });
     }
 
