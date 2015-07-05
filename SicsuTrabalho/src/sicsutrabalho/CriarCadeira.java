@@ -5,9 +5,7 @@
  */
 package sicsutrabalho;
 
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
@@ -44,7 +42,7 @@ public class CriarCadeira extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         cor = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        numeroPes = new javax.swing.JTextField();
+        pes = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         material = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -63,6 +61,11 @@ public class CriarCadeira extends javax.swing.JFrame {
         });
 
         jButton2.setText("Voltar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Sair");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -85,9 +88,9 @@ public class CriarCadeira extends javax.swing.JFrame {
 
         jLabel4.setText("Numero de Pés: ");
 
-        numeroPes.addActionListener(new java.awt.event.ActionListener() {
+        pes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                numeroPesActionPerformed(evt);
+                pesActionPerformed(evt);
             }
         });
 
@@ -95,9 +98,14 @@ public class CriarCadeira extends javax.swing.JFrame {
 
         jLabel6.setText("Tipo de Revestimento: ");
 
-        jLabel7.setText("Amortecedor: ");
+        jLabel7.setText("Amortecedor");
 
         amortecedorSim.setText("Sim");
+        amortecedorSim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                amortecedorSimActionPerformed(evt);
+            }
+        });
 
         amortecedorNao.setText("Não");
 
@@ -110,32 +118,35 @@ public class CriarCadeira extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(modelo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cor, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(preco, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(modelo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(cor, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(18, 18, 18)
-                                        .addComponent(numeroPes, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(material, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(revestimento, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(preco, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel4)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(pes, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(material, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(revestimento, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(amortecedorSim)
+                                .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(amortecedorSim)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(amortecedorNao))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(100, 100, 100)
@@ -160,7 +171,7 @@ public class CriarCadeira extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(cor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(numeroPes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -193,181 +204,45 @@ public class CriarCadeira extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_modeloActionPerformed
 
-    private void numeroPesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroPesActionPerformed
+    private void pesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_numeroPesActionPerformed
+    }//GEN-LAST:event_pesActionPerformed
+
+    private void amortecedorSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amortecedorSimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_amortecedorSimActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Cadeira cadeira = new Cadeira();
+        boolean nao = amortecedorNao.isSelected();
+        boolean sim = amortecedorSim.isSelected();
+        
+        if(nao && !sim) {
+            cadeira.setAmortecedor(false);
+        } else if(sim && !nao) { 
+            cadeira.setAmortecedor(true);
+        }
+        
+        try {
+            cadeira.setCor(cor.getText());
+            cadeira.setFabricante("ACME");
+            cadeira.setModelo(modelo.getText());
+            cadeira.setNumeroPes(Integer.valueOf(pes.getText()));
+            cadeira.setTipoMaterial(material.getText());
+            cadeira.setTipoRevestimento(revestimento.getText());
+            cadeira.setPreco(Double.valueOf(preco.getText()));
+                        
+            cadeira.serializar();
+            JOptionPane.showMessageDialog(this, "Cadeira salva com sucesso!");
+        } catch (RuntimeException e) { 
+            JOptionPane.showMessageDialog(this, "Erro com os dados da cadeira");
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    public JTextField getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(JTextField material) {
-        this.material = material;
-    }
-
-    public JTextField getRevestimento() {
-        return revestimento;
-    }
-
-    public void setRevestimento(JTextField revestimento) {
-        this.revestimento = revestimento;
-    }
-
-    public JRadioButton getAmortecedorNao() {
-        return amortecedorNao;
-    }
-
-    public void setAmortecedorNao(JRadioButton amortecedorNao) {
-        this.amortecedorNao = amortecedorNao;
-    }
-
-    public JRadioButton getAmortecedorSim() {
-        return amortecedorSim;
-    }
-
-    public void setAmortecedorSim(JRadioButton amortecedorSim) {
-        this.amortecedorSim = amortecedorSim;
-    }
-
-    public ButtonGroup getButtonGroup1() {
-        return buttonGroup1;
-    }
-
-    public void setButtonGroup1(ButtonGroup buttonGroup1) {
-        this.buttonGroup1 = buttonGroup1;
-    }
-
-    public JTextField getCor() {
-        return cor;
-    }
-
-    public void setCor(JTextField cor) {
-        this.cor = cor;
-    }
-
-    public JButton getjButton1() {
-        return jButton1;
-    }
-
-    public void setjButton1(JButton jButton1) {
-        this.jButton1 = jButton1;
-    }
-
-    public JButton getjButton2() {
-        return jButton2;
-    }
-
-    public void setjButton2(JButton jButton2) {
-        this.jButton2 = jButton2;
-    }
-
-    public JButton getjButton3() {
-        return jButton3;
-    }
-
-    public void setjButton3(JButton jButton3) {
-        this.jButton3 = jButton3;
-    }
-
-    public JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    public void setjLabel1(JLabel jLabel1) {
-        this.jLabel1 = jLabel1;
-    }
-
-    public JLabel getjLabel2() {
-        return jLabel2;
-    }
-
-    public void setjLabel2(JLabel jLabel2) {
-        this.jLabel2 = jLabel2;
-    }
-
-    public JLabel getjLabel3() {
-        return jLabel3;
-    }
-
-    public void setjLabel3(JLabel jLabel3) {
-        this.jLabel3 = jLabel3;
-    }
-
-    public JLabel getjLabel4() {
-        return jLabel4;
-    }
-
-    public void setjLabel4(JLabel jLabel4) {
-        this.jLabel4 = jLabel4;
-    }
-
-    public JLabel getjLabel5() {
-        return jLabel5;
-    }
-
-    public void setjLabel5(JLabel jLabel5) {
-        this.jLabel5 = jLabel5;
-    }
-
-    public JLabel getjLabel6() {
-        return jLabel6;
-    }
-
-    public void setjLabel6(JLabel jLabel6) {
-        this.jLabel6 = jLabel6;
-    }
-
-    public JLabel getjLabel7() {
-        return jLabel7;
-    }
-
-    public void setjLabel7(JLabel jLabel7) {
-        this.jLabel7 = jLabel7;
-    }
-
-    public JTextField getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(JTextField modelo) {
-        this.modelo = modelo;
-    }
-
-    public JTextField getNumeroPes() {
-        return numeroPes;
-    }
-
-    public void setNumeroPes(JTextField numeroPes) {
-        this.numeroPes = numeroPes;
-    }
-
-    public JTextField getPreco() {
-        return preco;
-    }
-
-    public void setPreco(JTextField preco) {
-        this.preco = preco;
-    }
-
-    public JTextField getTipoMaterial() {
-        return material;
-    }
-
-    public void setTipoMaterial(JTextField tipoMaterial) {
-        this.material = tipoMaterial;
-    }
-
-    public JTextField getTipoRevestimento() {
-        return revestimento;
-    }
-
-    public void setTipoRevestimento(JTextField tipoRevestimento) {
-        this.revestimento = tipoRevestimento;
-    }
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -404,6 +279,40 @@ public class CriarCadeira extends javax.swing.JFrame {
         });
     }
 
+    public JRadioButton getAmortecedorNao() {
+        return amortecedorNao;
+    }
+
+    public JRadioButton getAmortecedorSim() {
+        return amortecedorSim;
+    }
+
+    public JTextField getCor() {
+        return cor;
+    }
+
+    public JTextField getMaterial() {
+        return material;
+    }
+
+    public JTextField getModelo() {
+        return modelo;
+    }
+
+    public JTextField getPes() {
+        return pes;
+    }
+
+    public JTextField getPreco() {
+        return preco;
+    }
+
+    public JTextField getRevestimento() {
+        return revestimento;
+    }
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton amortecedorNao;
     private javax.swing.JRadioButton amortecedorSim;
@@ -421,7 +330,7 @@ public class CriarCadeira extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField material;
     private javax.swing.JTextField modelo;
-    private javax.swing.JTextField numeroPes;
+    private javax.swing.JTextField pes;
     private javax.swing.JTextField preco;
     private javax.swing.JTextField revestimento;
     // End of variables declaration//GEN-END:variables
