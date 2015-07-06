@@ -11,14 +11,10 @@ import java.io.*;
  *
  * @author leonardocordeiro
  */
-public class Cadeira implements Serializable {
+public class Cadeira extends Movel implements Serializable {
     
-    private String fabricante;
-    private String modelo;
-    private double preco;
     private String cor;
     private int numeroPes;
-    private String tipoMaterial;
     private String tipoRevestimento;
     private boolean amortecedor;
 
@@ -26,9 +22,6 @@ public class Cadeira implements Serializable {
         return fabricante;
     }
 
-    public void setFabricante(String fabricante) {
-        this.fabricante = fabricante;
-    }
 
     public String getModelo() {
         return modelo;
@@ -86,19 +79,23 @@ public class Cadeira implements Serializable {
         this.amortecedor = amortecedor;
     }
     
+    @Override
     public void imprimir() {
         System.out.println("Cadeira{" + "fabricante=" + fabricante + ", modelo=" + modelo + ", preco=" + preco + ", cor=" + cor + ", numeroPes=" + numeroPes + ", tipoMaterial=" + tipoMaterial + ", tipoRevestimento=" + tipoRevestimento + ", amortecedor=" + amortecedor + '}');
         
     }
     
+    @Override
     public String montar() { 
         return "seguir manual C1 das pags 2 a 8";
     }
     
+    @Override
     public String desmontar() { 
         return "seguir manual c1 das pags 9 a 15";
     }
     
+    @Override
     public void serializar() {
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("cadeira.bin"));
@@ -117,7 +114,6 @@ public class Cadeira implements Serializable {
             
             this.amortecedor = cadeira.amortecedor;
             this.cor = cadeira.cor;
-            this.fabricante = cadeira.fabricante;
             this.modelo = cadeira.modelo;
             this.numeroPes = cadeira.numeroPes;
             this.preco = cadeira.preco;
