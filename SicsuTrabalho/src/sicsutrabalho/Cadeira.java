@@ -14,7 +14,6 @@ import java.io.*;
 public class Cadeira extends Movel implements Serializable {
     
     private String cor;
-    private int numeroPes;
     private String tipoRevestimento;
     private boolean amortecedor;
 
@@ -22,6 +21,13 @@ public class Cadeira extends Movel implements Serializable {
         return fabricante;
     }
 
+    public void setNumPes(int numPes){
+        this.numPes = numPes;
+    }
+    
+    public int getNumPes(){
+        return this.numPes;
+    }
 
     public String getModelo() {
         return modelo;
@@ -45,14 +51,6 @@ public class Cadeira extends Movel implements Serializable {
 
     public void setCor(String cor) {
         this.cor = cor;
-    }
-
-    public int getNumeroPes() {
-        return numeroPes;
-    }
-
-    public void setNumeroPes(int numeroPes) {
-        this.numeroPes = numeroPes;
     }
 
     public String getTipoMaterial() {
@@ -81,7 +79,7 @@ public class Cadeira extends Movel implements Serializable {
     
     @Override
     public void imprimir() {
-        System.out.println("Cadeira{" + "fabricante=" + fabricante + ", modelo=" + modelo + ", preco=" + preco + ", cor=" + cor + ", numeroPes=" + numeroPes + ", tipoMaterial=" + tipoMaterial + ", tipoRevestimento=" + tipoRevestimento + ", amortecedor=" + amortecedor + '}');
+        System.out.println("Cadeira{" + "fabricante=" + fabricante + ", modelo=" + modelo + ", preco=" + preco + ", cor=" + cor + ", tipoMaterial=" + tipoMaterial + ", tipoRevestimento=" + tipoRevestimento + ", amortecedor=" + amortecedor + '}');
         
     }
     

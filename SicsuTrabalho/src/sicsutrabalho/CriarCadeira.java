@@ -212,9 +212,8 @@ public class CriarCadeira extends javax.swing.JFrame {
         
         try {
             cadeira.setCor(cor.getText());
-            cadeira.setFabricante("ACME");
             cadeira.setModelo(modelo.getText());
-            cadeira.setNumeroPes(Integer.valueOf(pes.getText()));
+            cadeira.setNumPes(Integer.valueOf(pes.getText()));
             cadeira.setTipoMaterial(material.getText());
             cadeira.setTipoRevestimento(revestimento.getText());
             cadeira.setPreco(Double.valueOf(preco.getText()));
