@@ -154,7 +154,7 @@ public class NewJFrame extends javax.swing.JFrame {
         criarMesa.show();
         
         Mesa mesa = new Mesa();
-        mesa = mesa.desserializacao();
+        mesa = mesa.desserializar();
         
         criarMesa.getModelo().setText(mesa.getModelo());
     }//GEN-LAST:event_jMenuItem4ActionPerformed

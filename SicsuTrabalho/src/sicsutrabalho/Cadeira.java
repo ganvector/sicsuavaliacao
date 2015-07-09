@@ -11,7 +11,7 @@ import java.io.*;
  *
  * @author leonardocordeiro
  */
-public class Cadeira extends Movel implements Serializable {
+public class Cadeira extends Movel {
     
     private String cor;
     private String tipoRevestimento;

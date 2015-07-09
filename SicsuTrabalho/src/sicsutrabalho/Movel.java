@@ -5,11 +5,13 @@
  */
 package sicsutrabalho;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Vitor
  */
-public abstract class Movel {
+public abstract class Movel implements Serializable {
     protected final String fabricante = "Acme Ltda";
     protected String modelo;
     protected double preco;
