@@ -6,6 +6,7 @@
 package sicsutrabalho;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -230,6 +231,32 @@ public class CriarMesa extends javax.swing.JFrame {
         });
     }
 
+    public JTextField getLargura() {
+        return largura;
+    }
+
+    public JTextField getModelo() {
+        return modelo;
+    }
+
+    public JTextField getNumLugares() {
+        return numLugares;
+    }
+
+    public JTextField getPes() {
+        return pes;
+    }
+
+    public JTextField getPreco() {
+        return preco;
+    }
+
+    public JTextField getTipoMaterial() {
+        return tipoMaterial;
+    }
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField altura;
     private javax.swing.JButton jButton1;
