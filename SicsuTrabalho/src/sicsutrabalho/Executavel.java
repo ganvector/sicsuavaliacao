@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package sicsutrabalho;
+
+import sicsutrabalho.Telas.NewJFrame;
+
 /**
  *
  * @author Vitor

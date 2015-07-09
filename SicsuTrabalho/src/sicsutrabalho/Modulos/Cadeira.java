@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sicsutrabalho;
+package sicsutrabalho.Modulos;
 
 import java.io.*;
 
@@ -134,6 +134,65 @@ public class Cadeira extends Movel implements Serializable, Decoracoes, Definica
             throw new RuntimeException(e);
         }        
        
-    }      
+    }
+
+    public Cadeira(String modelo, double preco, int numPes, String tipoMaterial) {
+        super(modelo, preco, numPes, tipoMaterial);
+    }
+
+    public Cadeira() {
+    }
+
+    public Cadeira(String modelo, double preco) {
+        super(modelo, preco);
+    }
+
+    public Cadeira(int numPes, String tipoMaterial) {
+        super(numPes, tipoMaterial);
+    }
+
+    public Cadeira(String cor, String tipoRevestimento, boolean amortecedor, String modelo, double preco, int numPes, String tipoMaterial) {
+        super(modelo, preco, numPes, tipoMaterial);
+        this.cor = cor;
+        this.tipoRevestimento = tipoRevestimento;
+        this.amortecedor = amortecedor;
+    }
+
+    public Cadeira(String cor, String tipoRevestimento, boolean amortecedor) {
+        this.cor = cor;
+        this.tipoRevestimento = tipoRevestimento;
+        this.amortecedor = amortecedor;
+    }
+
+    public Cadeira(String cor, String tipoRevestimento, boolean amortecedor, String modelo, double preco) {
+        super(modelo, preco);
+        this.cor = cor;
+        this.tipoRevestimento = tipoRevestimento;
+        this.amortecedor = amortecedor;
+    }
+
+    public Cadeira(String cor, String tipoRevestimento, boolean amortecedor, int numPes, String tipoMaterial) {
+        super(numPes, tipoMaterial);
+        this.cor = cor;
+        this.tipoRevestimento = tipoRevestimento;
+        this.amortecedor = amortecedor;
+    }
+
+    public Cadeira(String cor, String tipoRevestimento, boolean amortecedor, double preco, int numPes, String tipoMaterial) {
+        super(preco, numPes, tipoMaterial);
+        this.cor = cor;
+        this.tipoRevestimento = tipoRevestimento;
+        this.amortecedor = amortecedor;
+    }
+
+
+    public Cadeira(String cor, String tipoRevestimento, boolean amortecedor, String modelo, double preco, int numPes) {
+        super(modelo, preco, numPes);
+        this.cor = cor;
+        this.tipoRevestimento = tipoRevestimento;
+        this.amortecedor = amortecedor;
+    }
+    
+    
     
 }

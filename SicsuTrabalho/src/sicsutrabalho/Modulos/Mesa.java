@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sicsutrabalho;
+package sicsutrabalho.Modulos;
 
+import sicsutrabalho.Modulos.Movel;
 import java.io.*;
 
 /**
@@ -133,4 +134,62 @@ public class Mesa extends Movel implements Serializable, Decoracoes, DefinicaoMe
         }        
        
     }
+
+    public Mesa(String modelo, double preco, int numPes, String tipoMaterial) {
+        super(modelo, preco, numPes, tipoMaterial);
+    }
+
+    public Mesa() {
+    }
+
+    public Mesa(String modelo, double preco) {
+        super(modelo, preco);
+    }
+
+    public Mesa(int numPes, String tipoMaterial) {
+        super(numPes, tipoMaterial);
+    }
+
+    public Mesa(int numLugares, double altura, double largura, String modelo, double preco, int numPes, String tipoMaterial) {
+        super(modelo, preco, numPes, tipoMaterial);
+        this.numLugares = numLugares;
+        this.altura = altura;
+        this.largura = largura;
+    }
+
+    public Mesa(int numLugares, double altura, double largura) {
+        this.numLugares = numLugares;
+        this.altura = altura;
+        this.largura = largura;
+    }
+
+    public Mesa(int numLugares, double altura, double largura, String modelo, double preco) {
+        super(modelo, preco);
+        this.numLugares = numLugares;
+        this.altura = altura;
+        this.largura = largura;
+    }
+
+    public Mesa(int numLugares, double altura, double largura, int numPes, String tipoMaterial) {
+        super(numPes, tipoMaterial);
+        this.numLugares = numLugares;
+        this.altura = altura;
+        this.largura = largura;
+    }
+
+    public Mesa(int numLugares, double altura, double largura, String modelo, double preco, String tipoMaterial) {
+        super(modelo, preco, tipoMaterial);
+        this.numLugares = numLugares;
+        this.altura = altura;
+        this.largura = largura;
+    }
+
+    public Mesa(int numLugares, double altura, double largura, String modelo, int numPes, String tipoMaterial) {
+        super(modelo, numPes, tipoMaterial);
+        this.numLugares = numLugares;
+        this.altura = altura;
+        this.largura = largura;
+    }
+    
+    
 }
