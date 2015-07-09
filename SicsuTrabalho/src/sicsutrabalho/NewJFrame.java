@@ -129,7 +129,7 @@ public class NewJFrame extends javax.swing.JFrame {
         criarCadeira.getModelo().setText(cadeira.getModelo());
         criarCadeira.getRevestimento().setText(cadeira.getTipoRevestimento());
         criarCadeira.getMaterial().setText(cadeira.getTipoMaterial());
-        criarCadeira.getPes().setText(Integer.toString(cadeira.getNumeroPes()));
+        criarCadeira.getPes().setText(Integer.toString(cadeira.getNumPes()));
         criarCadeira.getPreco().setText(Double.toString(cadeira.getPreco()));
         
         if(cadeira.isAmortecedor()) {

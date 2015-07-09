@@ -113,7 +113,7 @@ public class Cadeira extends Movel implements Serializable {
             this.amortecedor = cadeira.amortecedor;
             this.cor = cadeira.cor;
             this.modelo = cadeira.modelo;
-            this.numeroPes = cadeira.numeroPes;
+            this.numPes = cadeira.numPes;
             this.preco = cadeira.preco;
             this.tipoMaterial = cadeira.tipoMaterial;
             this.tipoRevestimento = cadeira.tipoRevestimento;
