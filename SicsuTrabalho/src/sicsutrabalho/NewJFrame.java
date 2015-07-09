@@ -157,6 +157,12 @@ public class NewJFrame extends javax.swing.JFrame {
         mesa = mesa.desserializar();
         
         criarMesa.getModelo().setText(mesa.getModelo());
+        criarMesa.getPreco().setText(Double.toString(mesa.getPreco()));
+        criarMesa.getPes().setText(Integer.toString(mesa.getNumPes()));
+        criarMesa.getTipoMaterial().setText(mesa.getTipoMaterial());
+        criarMesa.getNumLugares().setText(Integer.toString(mesa.getNumLugares()));
+        criarMesa.getAltura().setText(Double.toString(mesa.getAltura()));
+        criarMesa.getLargura().setText(Double.toString(mesa.getLargura()));
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**

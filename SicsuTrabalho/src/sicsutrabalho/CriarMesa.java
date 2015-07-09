@@ -231,6 +231,10 @@ public class CriarMesa extends javax.swing.JFrame {
         });
     }
 
+    public JTextField getAltura() {
+        return altura;
+    }
+    
     public JTextField getLargura() {
         return largura;
     }
