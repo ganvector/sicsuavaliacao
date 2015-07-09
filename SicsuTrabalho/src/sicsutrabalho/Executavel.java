@@ -4,18 +4,18 @@
  * and open the template in the editor.
  */
 package sicsutrabalho;
-
 /**
  *
  * @author Vitor
  */
-public class SicsuTrabalho {
+public class Executavel {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Teste de Hello Qualquer coisa");
+        NewJFrame njf = new NewJFrame();
+        njf.show();
     }
     
 }
