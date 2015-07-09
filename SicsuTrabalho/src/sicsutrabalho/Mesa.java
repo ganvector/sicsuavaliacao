@@ -11,7 +11,7 @@ import java.io.*;
  *
  * @author Vitor
  */
-public class Mesa extends Movel implements Serializable{
+public class Mesa extends Movel implements Serializable, Decoracoes, DefinicaoMesa{
     private int numLugares;
     private double altura;
     private double largura;
@@ -20,34 +20,42 @@ public class Mesa extends Movel implements Serializable{
         return fabricante;
     }
 
+    @Override
     public String getModelo() {
         return modelo;
     }
 
+    @Override
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
+    @Override
     public double getPreco() {
         return preco;
     }
 
+    @Override
     public void setPreco(double preco) {
         this.preco = preco;
     }
 
+    @Override
     public int getNumPes() {
         return numPes;
     }
 
+    @Override
     public void setNumPes(int numPes) {
         this.numPes = numPes;
     }
 
+    @Override
     public String getTipoMaterial() {
         return tipoMaterial;
     }
 
+    @Override
     public void setTipoMaterial(String tipoMaterial) {
         this.tipoMaterial = tipoMaterial;
     }
@@ -103,6 +111,7 @@ public class Mesa extends Movel implements Serializable{
         
     }
     
+    @Override
     public Mesa desserializar() { 
         try {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("mesa.bin"));

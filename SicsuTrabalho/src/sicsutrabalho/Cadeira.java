@@ -11,7 +11,7 @@ import java.io.*;
  *
  * @author leonardocordeiro
  */
-public class Cadeira extends Movel {
+public class Cadeira extends Movel implements Serializable, Decoracoes, DefinicaoCadeira {
     
     private String cor;
     private String tipoRevestimento;
@@ -21,26 +21,32 @@ public class Cadeira extends Movel {
         return fabricante;
     }
 
+    @Override
     public void setNumPes(int numPes){
         this.numPes = numPes;
     }
     
+    @Override
     public int getNumPes(){
         return this.numPes;
     }
 
+    @Override
     public String getModelo() {
         return modelo;
     }
 
+    @Override
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
+    @Override
     public double getPreco() {
         return preco;
     }
 
+    @Override
     public void setPreco(double preco) {
         this.preco = preco;
     }
@@ -53,10 +59,12 @@ public class Cadeira extends Movel {
         this.cor = cor;
     }
 
+    @Override
     public String getTipoMaterial() {
         return tipoMaterial;
     }
 
+    @Override
     public void setTipoMaterial(String tipoMaterial) {
         this.tipoMaterial = tipoMaterial;
     }
@@ -105,6 +113,7 @@ public class Cadeira extends Movel {
         
     }
     
+    @Override
     public Cadeira desserializar() { 
         try {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream("cadeira.bin"));

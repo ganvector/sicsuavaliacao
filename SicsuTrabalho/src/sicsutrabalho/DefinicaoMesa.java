@@ -10,5 +10,7 @@ package sicsutrabalho;
  * @author Vitor
  */
 public interface DefinicaoMesa {
-    
+    void imprimir();
+    void serializar();
+    Mesa desserializar();
 }

@@ -10,5 +10,7 @@ package sicsutrabalho;
  * @author Vitor
  */
 public interface DefinicaoCadeira {
-    
+    void imprimir();
+    void serializar();
+    Cadeira desserializar();
 }
